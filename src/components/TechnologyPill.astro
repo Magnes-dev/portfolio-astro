@@ -1,0 +1,45 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  size?: "sm" | "lg";
+}
+
+const { image, name, size = "sm" } = Astro.props;
+---
+
+<div class={size === "lg" ? "pill large hover-scale-animation" : "pill small"}>
+  <img src={image} alt={`${name} logo`} />
+  <p>{name}</p>
+</div>
+
+<style>
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    border-radius: 2rem;
+  }
+  
+  .small {
+    padding: 0.3rem 1rem;
+    box-shadow: 0 0 5px var(--khaki-color);
+    color: var(--ivory-color);
+
+    & img {
+      max-width: 20px;
+    }
+  }
+
+  .large {
+    padding: 0.5rem 1.2rem;
+    box-shadow: 0 0 5px var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--background-color);
+
+    & img {
+      max-width: 35px;
+    }
+  }
+</style>

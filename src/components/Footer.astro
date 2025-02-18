@@ -1,0 +1,73 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="top-container">
+    <p>Diseñado y desarrollado por Rubén Yáñez Aballe</p>
+    <p class="center-text">{`© ${year} Todos los derechos reservados.`}</p>
+    <a href="#" class="end-text">
+      <img src="/assets/logos/github.png" alt="Github logo" />
+      Github
+    </a>
+  </div>
+  <div class="bottom-container">
+    <p>
+      Iconos PNG por&nbsp;
+      <a href="https://icons8.com" target="_blank" >Icons8</a>
+    </p>
+    <p>
+      Iconos SVG por&nbsp;
+      <a href="https://www.svgrepo.com" target="_blank" >SVGRepo</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 3rem;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    box-shadow: 0 0 10px var(--accent-color);
+
+    & a {
+      color: var(--background-color);
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & img {
+        max-width: 30px;
+      }
+    }
+  }
+
+  .top-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bottom-container {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    gap: 4rem;
+
+    & p {
+      display: flex;
+
+      & a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .end-text {
+    margin-left: auto;
+  }
+</style>

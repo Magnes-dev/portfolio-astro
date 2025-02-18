@@ -1,0 +1,93 @@
+---
+import CodeIcon2 from "../svg/CodeIcon2.astro";
+import ECommerceIcon from "../svg/ECommerceIcon.astro";
+import FullStackIcon from "../svg/FullStackIcon.astro";
+---
+
+<section class="summary-section">
+  <div class="summary-container">
+    <div class="summary">
+      <CodeIcon2 width="50px" height="50px" fill="var(--accent-color)" />
+      <h3>Desarrollador web</h3>
+      <p>
+        Como desarrollador web, creo y mantengo sitios y aplicaciones en
+        internet, asegurándome de que sean funcionales, rápidas y fáciles de
+        usar. Mi trabajo es transformar ideas en plataformas digitales que
+        cumplan con tus necesidades y las de tus clientes.
+      </p>
+    </div>
+    <div class="summary">
+      <FullStackIcon width="50px" height="50px" fill="var(--accent-color)" />
+      <h3>Full Stack</h3>
+      <p>
+        Ser desarrollador full stack significa que trabajo en todas las partes
+        de una aplicación web:
+      </p>
+      <ul>
+        <li>
+          Frontend (parte visible): Diseño y desarrollo de la interfaz con la
+          que interactúan los usuarios.
+        </li>
+        <li>
+          Backend (parte interna): Lógica del negocio, bases de datos y
+          servidores para que todo funcione correctamente.
+        </li>
+      </ul>
+      <p>
+        Básicamente, me encargo de que tu web se vea bien, funcione bien y
+        maneje los datos correctamente.
+      </p>
+    </div>
+    <div class="summary">
+      <ECommerceIcon width="50px" height="50px" fill="var(--accent-color)" />
+      <h3>eCommerce</h3>
+      <p>
+        Un eCommerce permite que su negocio venda productos o servicios en línea
+        24/7, alcanzando más clientes sin necesidad de una tienda física. Reduce
+        costos operativos, mejora la experiencia de compra y facilita la gestión
+        de pedidos y pagos.
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .summary-section {
+      margin-bottom: 5rem;
+    }
+
+    .summary-container {
+      border-radius: var(--container-border-radius);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+      padding: 3rem;
+      max-width: 90vw;
+      margin: auto;
+      box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    .summary {
+      display: flex;
+      flex-direction: column;
+      line-height: 2rem;
+
+      & h3 {
+        margin: 0.5rem 0;
+        color: var(--secondary-text-color);
+      }
+
+      & ul {
+        list-style-position: inside;
+        padding: 0;
+
+        & li {
+          margin: 0.7rem;
+        }
+
+        & li::marker {
+          color: var(--accent-color);
+        }
+      }
+    }
+  </style>
+</section>

@@ -1,0 +1,39 @@
+---
+import TechnologyPill from "./TechnologyPill.astro";
+import { technologies } from "../lib/technologies.d";
+
+---
+
+<section id="stack">
+  <div class="container">
+    <h1>Mi stack tecnológico</h1>
+    <h2>Estas son las tecnologías con las que desarrollo mis aplicaciones</h2>
+    <div class="tech-stack-container">
+      {
+        technologies.map((technology) => {
+          const { name, image } = technology;
+          return <TechnologyPill name={name} image={image} size="lg" />;
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    width: fit-content;
+    max-width: 60%;
+    margin: auto;
+  }
+
+  .tech-stack-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem auto;
+    box-shadow: 0 0 10px var(--accent-color);
+    padding: 3rem;
+    border-radius: var(--container-border-radius);
+  }
+</style>

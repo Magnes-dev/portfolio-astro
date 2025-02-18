@@ -1,0 +1,27 @@
+---
+interface Props {
+  text: string
+}
+
+const { text } = Astro.props;
+
+---
+
+<div class="pill">
+  <slot />
+  { text }
+</div>
+
+<style>
+  .pill {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    background-color: var(--accent-color);
+    width: fit-content;
+    padding: .5rem .75rem;
+    border-radius: 2rem;
+    color: var(--background-color);
+    box-shadow: 0 0 5px var(--accent-color);
+  }
+</style>
