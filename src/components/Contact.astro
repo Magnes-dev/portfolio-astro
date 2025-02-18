@@ -1,0 +1,40 @@
+---
+import SendIcon from "../svg/SendIcon.astro";
+
+
+---
+
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div>
+      <h1>Contacto</h1>
+      <h2>¿Interesado/a en trabajar conmigo?</h2>
+    </div>
+    <a href="mailto:ruben.ya.ab@gmail.com" class="button hover-scale-animation">
+      Envíame un correo
+      <SendIcon width="50px" height="50px" color="var(--background-color)" />
+    </a>
+  </div>
+</section>
+
+<style>
+  .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  .button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border-radius: 2rem;
+    box-shadow: 0 0 5px var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 2rem;
+    font-family: "Rubik-semibold";
+  }
+</style>

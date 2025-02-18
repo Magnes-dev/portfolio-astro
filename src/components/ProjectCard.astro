@@ -1,0 +1,78 @@
+---
+import type { Project } from '../lib/projects';
+import TechnologyPill from './TechnologyPill.astro';
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props;
+const { name, image, technologies } = project;
+
+---
+
+<div class="container hover-scale-animation">
+  <img src={image} />
+  <div class="technologies">
+    <h3>Tecnologías</h3>
+    {
+      technologies.map((technologie) => {
+        const { name, image } = technologie;
+        return <TechnologyPill image={image} name={name} />
+      })
+    }
+  </div>
+  <div class="pill">
+    {name}
+  </div>
+</div>
+
+<style>
+  .container {
+    box-shadow: 0 0 10px var(--accent-color);
+    width: 500px;
+    height: 250px;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover .technologies {
+      width: calc(40% + var(--technologies-offset));
+    }
+  }
+
+  .technologies {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem;
+    height: 100%;
+    width: 0;
+    background-color: var(--accent-color);
+    position: absolute;
+    top: 0;
+    right: calc(var(--technologies-offset) * -1);
+    transition: width .3s ease;
+
+    & h3 {
+      color: var(--ivory-color);
+      font-size: 1rem;
+    }
+  }
+
+  .pill {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--folly-color);
+    color: var(--ivory-color);
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import CodeIcon from "../svg/CodeIcon.astro";
+import ToggleThemeButton from "./ToggleThemeButton.astro";
+---
+
+<header>
+  <div class="header-col-1">
+    <div class="header-name">
+      <CodeIcon width="40px" height="40px" />
+      <h3>Rubén Yáñez Aballe</h3>
+    </div>
+  </div>
+  <nav class="header-col-2">
+    <ul class="nav-list">
+      <li class="hover-scale-animation"><a href="#projects">Proyectos</a></li>
+      <li class="hover-scale-animation"><a href="#stack">Stack</a></li>
+      <li class="hover-scale-animation"><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+  <div class="header-col-3">
+    <ToggleThemeButton />
+  </div>
+</header>
+
+<style>
+  header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    & div {
+      padding: 1rem 4rem;
+    }
+  }
+
+  .header-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+
+    & img {
+      max-width: 40px;
+    }
+  }
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    & li a {
+      background-color: var(--folly-color);
+      color: var(--ivory-color);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+    }
+  }
+
+  .header-col-3 {
+    display: flex;
+    justify-content: end;
+  }
+</style>
