@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   image: string;
   name: string;
@@ -9,7 +11,7 @@ const { image, name, size = "sm" } = Astro.props;
 ---
 
 <div class={size === "lg" ? "pill large hover-scale-animation" : "pill small"}>
-  <img src={image} alt={`${name} logo`} />
+  <Image src={image} alt={`${name} logo`} width={35} height={35} loading="lazy" class="image" />
   <p>{name}</p>
 </div>
 
@@ -19,7 +21,7 @@ const { image, name, size = "sm" } = Astro.props;
     align-items: center;
     gap: 0.5rem;
     width: fit-content;
-    border-radius: 2rem;
+    border-radius: var(--button-border-radius);
   }
   
   .small {
@@ -27,8 +29,9 @@ const { image, name, size = "sm" } = Astro.props;
     box-shadow: 0 0 5px var(--khaki-color);
     color: var(--ivory-color);
 
-    & img {
+    & .image {
       max-width: 20px;
+      max-height: 20px;
     }
   }
 

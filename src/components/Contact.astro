@@ -37,4 +37,13 @@ import SendIcon from "../svg/SendIcon.astro";
     padding: .5rem 2rem;
     font-family: "Rubik-semibold";
   }
+
+  @media screen and (width <= 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: left;
+      max-width: 90%;
+      gap: 2rem;
+    }
+  }
 </style>

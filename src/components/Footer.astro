@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const year = new Date().getFullYear();
 ---
 
@@ -6,8 +8,8 @@ const year = new Date().getFullYear();
   <div class="top-container">
     <p>Diseñado y desarrollado por Rubén Yáñez Aballe</p>
     <p class="center-text">{`© ${year} Todos los derechos reservados.`}</p>
-    <a href="#" class="end-text">
-      <img src="/assets/logos/github.png" alt="Github logo" />
+    <a href="https://github.com/RubenYaAb" class="end-text" target="_blank">
+      <Image src="/assets/logos/github.png" alt="Github logo" width={30} height={30} loading="lazy" />
       Github
     </a>
   </div>
@@ -69,5 +71,23 @@ const year = new Date().getFullYear();
 
   .end-text {
     margin-left: auto;
+  }
+
+  @media screen and (width <= 768px) {
+    .top-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: .5rem;
+    }
+
+    .end-text {
+      margin: auto;
+    }
+
+    .bottom-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 </style>

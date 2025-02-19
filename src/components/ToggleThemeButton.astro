@@ -1,5 +1,9 @@
 ---
+interface Props {
+  color: string
+}
 
+const { color } = Astro.props;
 ---
 
 <button
@@ -13,7 +17,7 @@
     aria-hidden="true"
     width="2.5em"
     height="2.5em"
-    fill="currentColor"
+    fill={color}
     stroke-linecap="round"
     class="theme-toggle__classic"
     viewBox="0 0 32 32"

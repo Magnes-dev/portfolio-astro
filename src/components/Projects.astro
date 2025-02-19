@@ -33,4 +33,14 @@ import { projects } from "../lib/projects.d";
     width: fit-content;
     margin: 3rem auto;
   }
+
+  @media screen and (width <= 768px) {
+    .container {
+      width: 90%;
+    }
+
+    .project-container {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

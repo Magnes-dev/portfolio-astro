@@ -1,29 +1,43 @@
 ---
+import { Image } from "astro:assets";
 import CodeIcon2 from "../svg/CodeIcon2.astro";
 import ECommerceIcon from "../svg/ECommerceIcon.astro";
 import FullStackIcon from "../svg/FullStackIcon.astro";
 import Pill from "./Pill.astro";
-
 ---
 
 <section class="hero">
   <div class="text-container">
-    <h1>¡Hola! Me llamo <br/> Rubén Yáñez Aballe</h1>
+    <h1>¡Hola! Me llamo <br /> Rubén Yáñez Aballe</h1>
     <h2>Soy desarrollador web full stack</h2>
     <div class="pill-container">
       <Pill text="Desarrollador web">
         <CodeIcon2 width="30px" height="30px" fill="var(--background-color)" />
       </Pill>
       <Pill text="Full Stack">
-        <FullStackIcon width="30px" height="30px" fill="var(--background-color)" />
+        <FullStackIcon
+          width="30px"
+          height="30px"
+          fill="var(--background-color)"
+        />
       </Pill>
       <Pill text="eCommerce">
-        <ECommerceIcon width="30px" height="30px" fill="var(--background-color)" />
+        <ECommerceIcon
+          width="30px"
+          height="30px"
+          fill="var(--background-color)"
+        />
       </Pill>
     </div>
   </div>
   <div class="image-container hover-scale-animation">
-    <img src="/assets/portrait.webp" />
+    <Image
+      src="/assets/portrait.webp"
+      alt="Retrato de un programador"
+      width={500}
+      height={800}
+      loading="eager"
+    />
   </div>
 </section>
 
@@ -56,5 +70,16 @@ import Pill from "./Pill.astro";
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  @media screen and (width <= 768px) {
+    .image-container {
+      display: none;
+    }
+
+    .text-container {
+      max-width: unset;
+      padding: 2rem;
+    }
   }
 </style>

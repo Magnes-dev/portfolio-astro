@@ -18,7 +18,7 @@ import ToggleThemeButton from "./ToggleThemeButton.astro";
     </ul>
   </nav>
   <div class="header-col-3">
-    <ToggleThemeButton />
+    <ToggleThemeButton color="var(--text-color)" />
   </div>
 </header>
 
@@ -55,12 +55,32 @@ import ToggleThemeButton from "./ToggleThemeButton.astro";
       background-color: var(--folly-color);
       color: var(--ivory-color);
       padding: 0.5rem 1rem;
-      border-radius: 2rem;
+      border-radius: var(--button-border-radius);
     }
   }
 
   .header-col-3 {
     display: flex;
     justify-content: end;
+  }
+
+  @media screen and (width <= 768px) {
+    header {
+      grid-template-columns: 3fr 1fr;
+      margin-top: 3rem;
+
+      & div {
+        padding: 0 1rem ;
+      }
+    }
+
+    .header-col-2 {
+      display: none;
+      order: 3;
+    }
+
+    .header-col-3 {
+      order: 2;
+    }
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import type { Project } from '../lib/projects';
 import TechnologyPill from './TechnologyPill.astro';
+import { Image } from "astro:assets";
 
 interface Props {
   project: Project
@@ -12,7 +13,7 @@ const { name, image, technologies } = project;
 ---
 
 <div class="container hover-scale-animation">
-  <img src={image} />
+  <Image src={image} alt={name} width={500} height={250} loading="lazy" />
   <div class="technologies">
     <h3>Tecnologías</h3>
     {
@@ -73,6 +74,16 @@ const { name, image, technologies } = project;
     background-color: var(--folly-color);
     color: var(--ivory-color);
     padding: .5rem 1rem;
-    border-radius: 2rem;
+    border-radius: var(--button-border-radius);
+  }
+
+  @media screen and (width <= 768px) {
+    .container {
+      width: 100%;
+
+      &:hover .technologies {
+      width: calc(50% + var(--technologies-offset));
+    }
+    }
   }
 </style>
